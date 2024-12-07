@@ -1,0 +1,18 @@
+CREATING IMAGE AND RUNNING RUNNER:
+- Build image:
+  go to folder with Dockerfile and run build command passing url and token to docker:
+  docker build -t github-actions-runner   --build-arg RUNNER_URL=https://github.com/Teodorneishan/test-docker-githubactions   --build-arg RUNNER_TOKEN=DHJSLJNDLJSLDJSDJLSDSK .
+- Run container in background:
+  docker run -d github-actions-runner
+
+Troubleshoot:
+Verify its running jobs
+- docker logs name_of_container ( docker ps )
+- docker ps --size
+- docker system df --verbose > docker.stats-2024-12-07.log
+- docker system prune
+- docker rmi image_name_to_remove
+- docker stop container_name
+- docker rm container_name
+
+Change version of tar inside Dockerfile and build image and run container again.
